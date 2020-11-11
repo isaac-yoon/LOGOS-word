@@ -9,12 +9,13 @@
     "lib": "lib"
   },
   "engines": {
-    "node": ">=8.1.0"
+    "node": "10.x"
   },
   "scripts": {
     "build": "webpack --watch",
     "start": "node app.js",
-    "start:debug": "DEBUG=* node app.js"
+    "start:debug": "DEBUG=* node app.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -25,7 +26,8 @@
     "node-fetch": "^2.6.1",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.7",
-    "webpack": "^5.4.0"
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
