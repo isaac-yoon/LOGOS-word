@@ -12,12 +12,11 @@
     "node": "10.x"
   },
   "scripts": {
-    "build": "webpack",
-    "build watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
+    "build": "webpack --watch --mode=development",
     "server": "nodemon app.js",
-    "start:debug": "DEBUG=* node app.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+    "heroku-postbuild": "webpack -p"
   },
   "dependencies": {
     "axios": "^0.18.0",
