@@ -1,23 +1,13 @@
 const axios = require('axios');
 
 document.addEventListener('DOMContentLoaded', () => {
+    let canvas = document.getElementById('word-canvas');
+    let gameLayout = document.getElementById('page-layout');
 
-    let isbn = '0201558025';
-    axios.get(`/books/${isbn}`)
-    .then((response) => {
-        console.log(response); 
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
-
-    let query = "grace hopper";
-    axios.get(`/search?string=${query}`)
-    .then((response) => {
-        console.log(response);
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
+    const input = document.getElementById('word-input');
+    // const game = new Game(ctx, canvas, input, gameLayout);
     
-})
+    canvas.addEventListener('click', game.startGame);
+    gameLayout.addEventListener('keypress', game.startGame);
+
+});
