@@ -1,4 +1,4 @@
-.page-layout {
+#page-layout {
   display: flex;
   flex-direction: column;
 }
