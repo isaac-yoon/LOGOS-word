@@ -33,6 +33,7 @@ class Game {
     this.hiddenWord = '';
 
     // bindings
+    this.wrapText = this.wrapText.bind(this);
     this.displayVerse = this.displayVerse.bind(this);
     this.clearCanvas = this.clearCanvas.bind(this);
     this.hideVerse = this.hideVerse.bind(this);
@@ -44,9 +45,34 @@ class Game {
     this.clearInputField = this.clearInputField.bind(this);
   };
 
+  wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+    let words = text.split(' ');
+    let line = '';
+
+    for (let i = 0; i < words.length; i++) {
+      let testLine = line + words[i] + ' ';
+      let metrics = ctx.measureText(testLine);
+      let testWidth = metrics.width;
+
+      if (testWidth > maxWidth && i > 0) {
+        ctx.fillText(line, x, y);
+        line = words[i] + ' ';
+        y += lineHeight;
+      } else {
+        line = testLine;
+      }
+    }
+
+    ctx.fillText(line, x, y);
+  };
+
   displayVerse(verse) {
-    this.ctx.font = '10px serif';
-    this.ctx.fillText(verse, 10, 50);
+    this.ctx.font = '12px serif';
+    let maxWidth = 250;
+    let lineHeight = 25;
+    let x = 10;
+    let y = 25;
+    this.wrapText(this.ctx, verse, x, y, maxWidth, lineHeight);
   };
 
   clearCanvas() {
