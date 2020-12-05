@@ -39,6 +39,7 @@ class Game {
     this.checkInputWithHiddenWord = this.checkInputWithHiddenWord.bind(this);
     this.winCheck = this.winCheck.bind(this);
     this.render = this.render.bind(this);
+    this.removeStartEventListeners = this.removeStartEventListeners.bind(this);
     this.start = this.start.bind(this);
   };
 
@@ -85,7 +86,7 @@ class Game {
     
     if (this.winCheck()) {
       console.log('user has won');
-      // render a win
+      // render a win message and option to re-start game
     } else {
       if (this.guessedCorrectly) {
       this.level += 1;
@@ -94,15 +95,19 @@ class Game {
       this.guessed = false;
       this.hideVerse();
       } else if (this.guessed) {
-        // display message saying you guessed incorrectly, next to text box probably
+        // display message notifying user's guess is incorrect
       }
       this.displayVerse(this.currentVerse);
     }
   };
 
-  start() {    
+  removeStartEventListeners() {
     this.canvas.removeEventListener('click', this.start);
     this.pageLayout.removeEventListener('keypress', this.start);
+  };
+
+  start() {
+    this.removeStartEventListeners();
     this.input.addEventListener('keypress', this.checkInputWithHiddenWord);
 
     this.currentVerse = _verses__WEBPACK_IMPORTED_MODULE_0__.default[this.level];
