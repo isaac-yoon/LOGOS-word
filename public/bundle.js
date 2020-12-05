@@ -25,87 +25,90 @@ class Game {
     this.pageLayout = pageLayout;
     this.ctx = ctx;
     this.level = 1;
+    this.guessedCorrectly = false;
+    this.guessed = false;
     this.input = input;
     this.canvas = canvas;
+    this.currentVerse = '';
+    this.hiddenWord = '';
 
     // bindings
     this.displayVerse = this.displayVerse.bind(this);
-    this.displayHiddenVerse = this.displayHiddenVerse.bind(this);
+    this.clearCanvas = this.clearCanvas.bind(this);
+    this.hideVerse = this.hideVerse.bind(this);
     this.checkInputWithHiddenWord = this.checkInputWithHiddenWord.bind(this);
+    this.winCheck = this.winCheck.bind(this);
+    this.render = this.render.bind(this);
     this.start = this.start.bind(this);
   };
 
-  displayVerse() {
-    let verse = this.verses[this.level];
-    // let verseSplit = verse.split(' ');
-    // verseSplit[4] = '-------';
-    // verseSplit = verseSplit.join(' ');
+  displayVerse(verse) {
     this.ctx.font = '12px serif';
     this.ctx.fillText(verse, 10, 50);
-    // setTimeout(function() {
-    //   this.ctx.fillText(verseSplit, 10, 50);
-    // }, 3000);
   };
 
-  displayHiddenVerse() {
-    // clear previous canvas
+  clearCanvas() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-    let verse = this.verses[this.level];
-    let verseSplit = verse.split(' ');
-
-    // save hidden word
-    let array = [];
-    array.push(verseSplit[4]);
-
-    // add dashes to word that was hidden
-    verseSplit[4] = '-------';
-
-    // rejoin
-    verseSplit = verseSplit.join(' ');
-
-    // write on canvas hidden
-    this.ctx.font = '12px serif';
-    this.ctx.fillText(verseSplit, 10, 50);
-
-    this.checkInputWithHiddenWord(array[0]);
   };
 
-  // function that goes into divisible by number 
-  // saves values to a array
+  hideVerse() {
+    let splitVerse = this.currentVerse.split(' ');
+    let i = Math.floor(Math.random() * splitVerse.length);
+    let wordToHide = splitVerse[i];
 
-  // another function that changes indexes to dashes that takes in array
-  // 
-  // write out all helper functions
+    splitVerse[i] = new Array(wordToHide.length + 1).join('_ ');
+    this.currentVerse = splitVerse.join(' ');
 
-  checkInputWithHiddenWord(hiddenWord) {
+    this.hiddenWord = wordToHide;
+  };
+
+  checkInputWithHiddenWord(e) {
     if (e.keyCode === 32 || e.keyCode === 13) {
-      let userGuess = this.input.value;
-      
-      // word matches
-      if (userGuess === hiddenWord) {
-        this.displayHiddenVerse()
-        // start new level
-        this.level += 1
-
-        // needs to display new level hidden verse
-        // and create a loop
+      this.guessed = true;
+      let userGuess = this.input.value.toLowerCase();
+      if (userGuess === this.hiddenWord.toLowerCase()) {
+        console.log('user guessed correctly');
+        this.guessedCorrectly = true;
+      } else {
+        console.log('user guessed wrong');
       }
+    };
+    this.render();
+  };
+
+  winCheck() {
+    return this.level == 2 && this.guessedCorrectly;
+  };
+
+  render() {
+    this.clearCanvas();
+    
+    if (this.winCheck()) {
+      console.log('user has won');
+      // render a win
+    } else {
+      if (this.guessedCorrectly) {
+      this.level += 1;
+      this.currentVerse = this.verses[this.level];
+      this.guessedCorrectly = false;
+      this.guessed = false;
+      this.hideVerse();
+      } else if (this.guessed) {
+        // display message saying you guessed incorrectly, next to text box probably
+      }
+      this.displayVerse(this.currentVerse);
     }
   };
 
-  start() {
-    // remove event listeners when game starts
+  start() {    
     this.canvas.removeEventListener('click', this.start);
     this.pageLayout.removeEventListener('keypress', this.start);
+    this.input.addEventListener('keypress', this.checkInputWithHiddenWord);
 
-    // display verse
-    this.displayVerse();
-
-    // display hidden verse
-    setTimeout(this.displayHiddenVerse, 3000);
+    this.currentVerse = _verses__WEBPACK_IMPORTED_MODULE_0__.default[this.level];
+    this.hideVerse();
+    this.render();
   };
-
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Game);
