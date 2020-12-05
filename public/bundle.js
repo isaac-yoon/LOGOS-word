@@ -2,6 +2,65 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./public/javascripts/canvas.js":
+/*!**************************************!*\
+  !*** ./public/javascripts/canvas.js ***!
+  \**************************************/
+/*! namespace exports */
+/*! export calculatePixelRatio [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export modifyPPICanvasResolution [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export setupCanvas [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "calculatePixelRatio": () => /* binding */ calculatePixelRatio,
+/* harmony export */   "modifyPPICanvasResolution": () => /* binding */ modifyPPICanvasResolution,
+/* harmony export */   "setupCanvas": () => /* binding */ setupCanvas
+/* harmony export */ });
+let calculatePixelRatio = function() {
+  let ctx = document.getElementById('word-canvas').getContext('2d');
+  let dpr = window.devicePixelRatio || 1;
+  let bsr = ctx.webkitBackingStorePixelRatio || 
+            ctx.mozBackingStorePixelRatio ||
+            ctx.msBackingStorePixelRatio ||
+            ctx.oBackingStorePixelRatio ||
+            ctx.backingStoePixelRatio ||
+            1;
+  
+  
+  return dpr / bsr;
+};
+
+let modifyPPICanvasResolution = function(w, h, ratio) {
+  if (!ratio) { ratio = PIXEL_RATIO; }
+  let canvas = document.getElementById('word-canvas');
+  canvas.width = w * ratio;
+  canvas.height = h * ratio;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  canvas.getContext('2d').setTransform(ratio, 0, 0, ratio, 0, 0);
+};
+
+let setupCanvas = function(canvas) {
+  let dpr = window.devicePixelRatio || 1;
+  let rect = canvas.getBoundingClientRect();
+
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  let ctx = canvas.getContext('2d');
+
+  ctx.scale(dpr, dpr);
+
+  return ctx;
+};
+
+
+
+/***/ }),
+
 /***/ "./public/javascripts/game.js":
 /*!************************************!*\
   !*** ./public/javascripts/game.js ***!
@@ -164,14 +223,20 @@ class Game {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./game */ "./public/javascripts/game.js");
+/* harmony import */ var _canvas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./canvas */ "./public/javascripts/canvas.js");
 ;
+
 
 document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById('word-canvas');
     let ctx = canvas.getContext('2d');
+
+    (0,_canvas__WEBPACK_IMPORTED_MODULE_1__.setupCanvas)(canvas);
+
     let pageLayout = document.getElementById('page-layout');
 
     const input = document.getElementById('word-input');
+    
     // create a new game
     const game = new _game__WEBPACK_IMPORTED_MODULE_0__.default(ctx, canvas, input, pageLayout);
 
