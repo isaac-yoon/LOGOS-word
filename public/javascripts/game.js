@@ -26,7 +26,7 @@ class Game {
   };
 
   displayVerse(verse) {
-    this.ctx.font = '12px serif';
+    this.ctx.font = '10px serif';
     this.ctx.fillText(verse, 10, 50);
   };
 

@@ -1,11 +1,13 @@
 #page-layout {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #word-canvas {
-  width: 800px;
+  width: 1000px;
   height: 450px;
+  border: 4px solid black;
 }
 
 #word-input {
