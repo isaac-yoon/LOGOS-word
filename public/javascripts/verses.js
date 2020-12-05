@@ -6,7 +6,7 @@ const verses = {
   5 : 'The fear of the LORD is the beginning of knowledge, but fools despise wisdom and instruction.',
   6 : 'The heart is deceitful above all things and beyond cure. Who can understand it?',
   7 : 'But seek first his kingdom and his righteousness, and all these things will be given to you as well.',
-  8 : 'level 8',
+  8 : "Now faith is confidence in what we hope for and assurance about what we do not see. By faith we understand that the universe was formed at God's command, so that what is seen was not made out of what was visible.",
   9 : 'level 9',
 };
 
