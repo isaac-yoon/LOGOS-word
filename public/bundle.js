@@ -70,8 +70,10 @@ class Game {
       if (userGuess === this.hiddenWord.toLowerCase()) {
         console.log('user guessed correctly');
         this.guessedCorrectly = true;
+        document.getElementById('word-input').value = '';
       } else {
         console.log('user guessed wrong');
+        document.getElementById('word-input').value = '';
       }
     };
     this.render();
