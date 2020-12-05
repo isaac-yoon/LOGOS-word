@@ -59,7 +59,7 @@ class Game {
   };
 
   winCheck() {
-    return this.level == 2 && this.guessedCorrectly;
+    return this.level == 9 && this.guessedCorrectly;
   };
 
   render() {
