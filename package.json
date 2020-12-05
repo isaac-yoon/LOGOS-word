@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "cors test",
   "main": "app.js",
-  "repository": "https://github.com/isaac-yoon/LogoS-word",
+  "repository": "https://github.com/isaac-yoon/LOGOS-word",
   "license": "MIT",
   "directories": {
     "lib": "lib"
