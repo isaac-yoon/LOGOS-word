@@ -41,6 +41,7 @@ class Game {
     this.render = this.render.bind(this);
     this.removeStartEventListeners = this.removeStartEventListeners.bind(this);
     this.start = this.start.bind(this);
+    this.clearInputField = this.clearInputField.bind(this);
   };
 
   displayVerse(verse) {
@@ -70,13 +71,17 @@ class Game {
       if (userGuess === this.hiddenWord.toLowerCase()) {
         console.log('user guessed correctly');
         this.guessedCorrectly = true;
-        document.getElementById('word-input').value = '';
+        this.clearInputField();
       } else {
         console.log('user guessed wrong');
-        document.getElementById('word-input').value = '';
+        this.clearInputField();
       }
     };
     this.render();
+  };
+
+  clearInputField() {
+    document.getElementById('word-input').value = '';
   };
 
   winCheck() {
