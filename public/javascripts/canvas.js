@@ -8,7 +8,6 @@ let calculatePixelRatio = function() {
             ctx.backingStoePixelRatio ||
             1;
   
-  
   return dpr / bsr;
 };
 

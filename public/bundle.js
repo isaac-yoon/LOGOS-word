@@ -30,7 +30,6 @@ let calculatePixelRatio = function() {
             ctx.backingStoePixelRatio ||
             1;
   
-  
   return dpr / bsr;
 };
 
@@ -230,13 +229,11 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById('word-canvas');
     let ctx = canvas.getContext('2d');
-
     (0,_canvas__WEBPACK_IMPORTED_MODULE_1__.setupCanvas)(canvas);
 
     let pageLayout = document.getElementById('page-layout');
-
     const input = document.getElementById('word-input');
-    
+
     // create a new game
     const game = new _game__WEBPACK_IMPORTED_MODULE_0__.default(ctx, canvas, input, pageLayout);
 
