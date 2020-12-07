@@ -95,7 +95,7 @@ class Game {
   }
 
   winCheck() {
-    return this.level == 10 && this.guessedCorrectly;
+    return (this.level == Object.keys(this.verses).length) && this.guessedCorrectly;
   }
 
   render() {
