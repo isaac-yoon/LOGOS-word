@@ -150,11 +150,11 @@ class Game {
       this.guessed = true;
       let userGuess = this.input.value.toLowerCase();
       if (userGuess === this.hiddenWord.toLowerCase()) {
-        console.log('user guessed correctly');
+        // console.log('user guessed correctly');
         this.guessedCorrectly = true;
         this.clearInputField();
       } else {
-        console.log('user guessed incorrectly');
+        // console.log('user guessed incorrectly');
         this.clearInputField();
       }
     }
