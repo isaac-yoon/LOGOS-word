@@ -1,0 +1,55 @@
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.90);
+  z-index: 99;
+  overflow: auto;
+}
+
+.modal-child {
+  background-color: rgb(230, 230, 230);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.inactive {
+  display: none;
+}
+
+.modal-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#start-game-modal-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 600px;
+  height: 500px;
+}
+
+.start-game-modal-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#start-game-modal-close {
+  height: 50px;
+  width: 175px;
+  border: black solid 1px;
+  border-radius: 5px;
+}
+
+#side-note {
+  font-style: italic;
+  font-size: 12px;
+}

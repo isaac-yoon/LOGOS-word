@@ -130,9 +130,10 @@ class Game {
   }
 
   useHint() {
+    // idea:
+    // construct the hidden word letter by letter and display on input field
     this.hintsUsed += 1;
     console.log('hint used');
-    
   }
 
   start() {

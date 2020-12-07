@@ -1,0 +1,12 @@
+html {
+  background-color: burlywood;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+button:focus {
+  outline: none;
+}

@@ -2,6 +2,9 @@ import Game from './game';
 import {
     setupCanvas
 } from './canvas';
+import {
+    addModalListeners
+} from './modal';
 
 document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById('word-canvas');
@@ -14,12 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // create a new game
     const game = new Game(ctx, canvas, input, pageLayout);
     
+    // modals
+    addModalListeners();
+
     // buttons
-    let restartButton = document.getElementById('restart-button');
+    const restartButton = document.getElementById('restart-button');
     restartButton.addEventListener('click', game.restart);
-    let hintButton = document.getElementById('hint-button');
+    const hintButton = document.getElementById('hint-button');
     hintButton.addEventListener('click', game.useHint);
-    
+
+
+
     // allow user to click or press any key to start game
     canvas.addEventListener('click', game.start);
     pageLayout.addEventListener('keypress', game.start);

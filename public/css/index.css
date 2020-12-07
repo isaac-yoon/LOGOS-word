@@ -1,7 +1,3 @@
-html {
-  background-color: burlywood;
-}
-
 #page-layout {
   display: flex;
   flex-direction: column;
