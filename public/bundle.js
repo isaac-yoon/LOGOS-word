@@ -7,8 +7,6 @@
   !*** ./public/javascripts/canvas.js ***!
   \**************************************/
 /*! namespace exports */
-/*! export calculatePixelRatio [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export modifyPPICanvasResolution [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export setupCanvas [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
@@ -16,8 +14,6 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "calculatePixelRatio": () => /* binding */ calculatePixelRatio,
-/* harmony export */   "modifyPPICanvasResolution": () => /* binding */ modifyPPICanvasResolution,
 /* harmony export */   "setupCanvas": () => /* binding */ setupCanvas
 /* harmony export */ });
 let calculatePixelRatio = function() {
@@ -100,8 +96,9 @@ class Game {
     this.render = this.render.bind(this);
     this.removeStartEventListeners = this.removeStartEventListeners.bind(this);
     this.start = this.start.bind(this);
+    this.restart = this.restart.bind(this);
     this.clearInputField = this.clearInputField.bind(this);
-  };
+  }
 
   wrapText(ctx, text, x, y, maxWidth, lineHeight) {
     let words = text.split(' ');
@@ -122,7 +119,7 @@ class Game {
     }
 
     ctx.fillText(line, x, y);
-  };
+  }
 
   displayVerse(verse) {
     this.ctx.font = '12px serif';
@@ -131,11 +128,11 @@ class Game {
     let x = 10;
     let y = 25;
     this.wrapText(this.ctx, verse, x, y, maxWidth, lineHeight);
-  };
+  }
 
   clearCanvas() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-  };
+  }
 
   hideVerse() {
     let splitVerse = this.currentVerse.split(' ');
@@ -146,7 +143,7 @@ class Game {
     this.currentVerse = splitVerse.join(' ');
 
     this.hiddenWord = wordToHide;
-  };
+  }
 
   checkInputWithHiddenWord(e) {
     if (e.keyCode === 32 || e.keyCode === 13) {
@@ -157,27 +154,27 @@ class Game {
         this.guessedCorrectly = true;
         this.clearInputField();
       } else {
-        console.log('user guessed wrong');
+        console.log('user guessed incorrectly');
         this.clearInputField();
       }
-    };
+    }
+
     this.render();
-  };
+  }
 
   clearInputField() {
     document.getElementById('word-input').value = '';
-  };
+  }
 
   winCheck() {
     return this.level == 9 && this.guessedCorrectly;
-  };
+  }
 
   render() {
     this.clearCanvas();
-    
+
     if (this.winCheck()) {
-      console.log('user has won');
-      // render a win message and option to re-start game
+      this.ctx.fillText('You won!', 125, 25);
     } else {
       if (this.guessedCorrectly) {
       this.level += 1;
@@ -186,26 +183,38 @@ class Game {
       this.guessed = false;
       this.hideVerse();
       } else if (this.guessed) {
-        // display message notifying user's guess is incorrect
+        // let user know that guess was incorrect...?
+        // or maybe clearing the input field is enough?
+
+        this.guessed = false;
       }
       this.displayVerse(this.currentVerse);
     }
-  };
+
+  }
 
   removeStartEventListeners() {
     this.canvas.removeEventListener('click', this.start);
     this.pageLayout.removeEventListener('keypress', this.start);
-  };
+  }
 
+  
   start() {
     this.removeStartEventListeners();
     this.input.addEventListener('keypress', this.checkInputWithHiddenWord);
-
+    
     this.currentVerse = _verses__WEBPACK_IMPORTED_MODULE_0__.default[this.level];
     this.hideVerse();
     this.render();
-  };
-};
+  }
+
+  restart() {
+    this.level = 1;
+    this.guessedCorrectly = false;
+    this.guessed = false;
+    this.start();
+  }
+}
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Game);
 
@@ -230,12 +239,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById('word-canvas');
     let ctx = canvas.getContext('2d');
     (0,_canvas__WEBPACK_IMPORTED_MODULE_1__.setupCanvas)(canvas);
-
+    
     let pageLayout = document.getElementById('page-layout');
     const input = document.getElementById('word-input');
-
+    
     // create a new game
     const game = new _game__WEBPACK_IMPORTED_MODULE_0__.default(ctx, canvas, input, pageLayout);
+    
+    // add a restart game button
+    let button = document.getElementById('restart-button');
+    button.addEventListener('click', game.restart);
 
     // allow user to click or press any key to start game
     canvas.addEventListener('click', game.start);
@@ -268,7 +281,7 @@ const verses = {
   7 : 'But seek first his kingdom and his righteousness, and all these things will be given to you as well.',
   8 : "Now faith is confidence in what we hope for and assurance about what we do not see. By faith we understand that the universe was formed at God's command, so that what is seen was not made out of what was visible.",
   9 : 'Then you will know the truth, and the truth will set you free.',
-};
+}
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (verses);
 

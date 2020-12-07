@@ -8,6 +8,6 @@ const verses = {
   7 : 'But seek first his kingdom and his righteousness, and all these things will be given to you as well.',
   8 : "Now faith is confidence in what we hope for and assurance about what we do not see. By faith we understand that the universe was formed at God's command, so that what is seen was not made out of what was visible.",
   9 : 'Then you will know the truth, and the truth will set you free.',
-};
+}
 
 export default verses;

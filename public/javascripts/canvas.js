@@ -35,7 +35,5 @@ let setupCanvas = function(canvas) {
 };
 
 export { 
-  calculatePixelRatio,
-  modifyPPICanvasResolution,
-  setupCanvas,
+  setupCanvas
 };

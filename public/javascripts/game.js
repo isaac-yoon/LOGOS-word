@@ -23,8 +23,9 @@ class Game {
     this.render = this.render.bind(this);
     this.removeStartEventListeners = this.removeStartEventListeners.bind(this);
     this.start = this.start.bind(this);
+    this.restart = this.restart.bind(this);
     this.clearInputField = this.clearInputField.bind(this);
-  };
+  }
 
   wrapText(ctx, text, x, y, maxWidth, lineHeight) {
     let words = text.split(' ');
@@ -45,7 +46,7 @@ class Game {
     }
 
     ctx.fillText(line, x, y);
-  };
+  }
 
   displayVerse(verse) {
     this.ctx.font = '12px serif';
@@ -54,11 +55,11 @@ class Game {
     let x = 10;
     let y = 25;
     this.wrapText(this.ctx, verse, x, y, maxWidth, lineHeight);
-  };
+  }
 
   clearCanvas() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-  };
+  }
 
   hideVerse() {
     let splitVerse = this.currentVerse.split(' ');
@@ -69,7 +70,7 @@ class Game {
     this.currentVerse = splitVerse.join(' ');
 
     this.hiddenWord = wordToHide;
-  };
+  }
 
   checkInputWithHiddenWord(e) {
     if (e.keyCode === 32 || e.keyCode === 13) {
@@ -80,27 +81,27 @@ class Game {
         this.guessedCorrectly = true;
         this.clearInputField();
       } else {
-        console.log('user guessed wrong');
+        console.log('user guessed incorrectly');
         this.clearInputField();
       }
-    };
+    }
+
     this.render();
-  };
+  }
 
   clearInputField() {
     document.getElementById('word-input').value = '';
-  };
+  }
 
   winCheck() {
     return this.level == 9 && this.guessedCorrectly;
-  };
+  }
 
   render() {
     this.clearCanvas();
-    
+
     if (this.winCheck()) {
-      console.log('user has won');
-      // render a win message and option to re-start game
+      this.ctx.fillText('You won!', 125, 25);
     } else {
       if (this.guessedCorrectly) {
       this.level += 1;
@@ -109,25 +110,37 @@ class Game {
       this.guessed = false;
       this.hideVerse();
       } else if (this.guessed) {
-        // display message notifying user's guess is incorrect
+        // let user know that guess was incorrect...?
+        // or maybe clearing the input field is enough?
+
+        this.guessed = false;
       }
       this.displayVerse(this.currentVerse);
     }
-  };
+
+  }
 
   removeStartEventListeners() {
     this.canvas.removeEventListener('click', this.start);
     this.pageLayout.removeEventListener('keypress', this.start);
-  };
+  }
 
+  
   start() {
     this.removeStartEventListeners();
     this.input.addEventListener('keypress', this.checkInputWithHiddenWord);
-
+    
     this.currentVerse = verses[this.level];
     this.hideVerse();
     this.render();
-  };
-};
+  }
+
+  restart() {
+    this.level = 1;
+    this.guessedCorrectly = false;
+    this.guessed = false;
+    this.start();
+  }
+}
 
 export default Game;
