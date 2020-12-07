@@ -12,6 +12,8 @@ class Game {
     this.canvas = canvas;
     this.currentVerse = '';
     this.hiddenWord = '';
+    this.incorrectGuesses = 0;
+    this.correctGuesses = 0;
 
     // bindings
     this.wrapText = this.wrapText.bind(this);
@@ -37,7 +39,7 @@ class Game {
       let testWidth = metrics.width;
 
       if (testWidth > maxWidth && i > 0) {
-        ctx.fillText(line, x, y);
+        ctx.strokeText(line, x, y);
         line = words[i] + ' ';
         y += lineHeight;
       } else {
@@ -45,7 +47,7 @@ class Game {
       }
     }
 
-    ctx.fillText(line, x, y);
+    ctx.strokeText(line, x, y);
   }
 
   displayVerse(verse) {
@@ -77,11 +79,9 @@ class Game {
       this.guessed = true;
       let userGuess = this.input.value.toLowerCase();
       if (userGuess === this.hiddenWord.toLowerCase()) {
-        // console.log('user guessed correctly');
         this.guessedCorrectly = true;
         this.clearInputField();
       } else {
-        // console.log('user guessed incorrectly');
         this.clearInputField();
       }
     }
@@ -101,18 +101,21 @@ class Game {
     this.clearCanvas();
 
     if (this.winCheck()) {
-      this.ctx.fillText('You won!', 125, 25);
+      this.ctx.strokeText('You won!', 125, 25);
+
+      // display score
+      this.ctx.strokeText(`Incorrect: ${this.incorrectGuesses}`, 125, 50);
+      this.ctx.strokeText(`Correct: ${this.correctGuesses}`, 125, 75);
     } else {
       if (this.guessedCorrectly) {
       this.level += 1;
+      this.correctGuesses += 1;
       this.currentVerse = this.verses[this.level];
       this.guessedCorrectly = false;
       this.guessed = false;
       this.hideVerse();
       } else if (this.guessed) {
-        // let user know that guess was incorrect...?
-        // or maybe clearing the input field is enough?
-
+        this.incorrectGuesses += 1;
         this.guessed = false;
       }
       this.displayVerse(this.currentVerse);
@@ -139,6 +142,8 @@ class Game {
     this.level = 1;
     this.guessedCorrectly = false;
     this.guessed = false;
+    this.incorrectGuesses = 0;
+    this.correctGuesses = 0;
     this.start();
   }
 }

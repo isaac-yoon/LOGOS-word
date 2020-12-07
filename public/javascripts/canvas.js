@@ -5,7 +5,7 @@ let calculatePixelRatio = function() {
             ctx.mozBackingStorePixelRatio ||
             ctx.msBackingStorePixelRatio ||
             ctx.oBackingStorePixelRatio ||
-            ctx.backingStoePixelRatio ||
+            ctx.backingStorePixelRatio ||
             1;
   
   return dpr / bsr;
