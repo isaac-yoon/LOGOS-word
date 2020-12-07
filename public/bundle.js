@@ -270,7 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
     hintButton.addEventListener('click', game.useHint);
 
 
-
     // allow user to click or press any key to start game
     canvas.addEventListener('click', game.start);
     pageLayout.addEventListener('keypress', game.start);

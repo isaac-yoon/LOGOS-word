@@ -1,10 +1,6 @@
 import Game from './game';
-import {
-    setupCanvas
-} from './canvas';
-import {
-    addModalListeners
-} from './modal';
+import { setupCanvas } from './canvas';
+import { addModalListeners } from './modal';
 
 document.addEventListener('DOMContentLoaded', () => {
     let canvas = document.getElementById('word-canvas');
@@ -25,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     restartButton.addEventListener('click', game.restart);
     const hintButton = document.getElementById('hint-button');
     hintButton.addEventListener('click', game.useHint);
-
 
 
     // allow user to click or press any key to start game

@@ -10,3 +10,15 @@ body {
 button:focus {
   outline: none;
 }
+
+footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 200px;
+  padding: 10px;
+}
+
+#links {
+  display: flex;
+  flex-direction: row;
+}
