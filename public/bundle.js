@@ -168,7 +168,7 @@ class Game {
   }
 
   winCheck() {
-    return this.level == 9 && this.guessedCorrectly;
+    return this.level == 10 && this.guessedCorrectly;
   }
 
   render() {
