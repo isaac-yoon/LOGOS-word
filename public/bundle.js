@@ -87,7 +87,8 @@ class Game {
     this.hiddenWord = '';
     this.incorrectGuesses = 0;
     this.correctGuesses = 0;
-
+    this.hintsUsed = 0;
+    
     // bindings
     this.wrapText = this.wrapText.bind(this);
     this.displayVerse = this.displayVerse.bind(this);
@@ -201,7 +202,12 @@ class Game {
     this.pageLayout.removeEventListener('keypress', this.start);
   }
 
-  
+  useHint() {
+    this.hintsUsed += 1;
+    console.log('hint used');
+    
+  }
+
   start() {
     this.removeStartEventListeners();
     this.input.addEventListener('keypress', this.checkInputWithHiddenWord);
@@ -251,10 +257,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // create a new game
     const game = new _game__WEBPACK_IMPORTED_MODULE_0__.default(ctx, canvas, input, pageLayout);
     
-    // add a restart game button
-    let button = document.getElementById('restart-button');
-    button.addEventListener('click', game.restart);
-
+    // buttons
+    let restartButton = document.getElementById('restart-button');
+    restartButton.addEventListener('click', game.restart);
+    let hintButton = document.getElementById('hint-button');
+    hintButton.addEventListener('click', game.useHint);
+    
     // allow user to click or press any key to start game
     canvas.addEventListener('click', game.start);
     pageLayout.addEventListener('keypress', game.start);

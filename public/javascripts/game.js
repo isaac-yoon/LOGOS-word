@@ -14,7 +14,8 @@ class Game {
     this.hiddenWord = '';
     this.incorrectGuesses = 0;
     this.correctGuesses = 0;
-
+    this.hintsUsed = 0;
+    
     // bindings
     this.wrapText = this.wrapText.bind(this);
     this.displayVerse = this.displayVerse.bind(this);
@@ -128,7 +129,12 @@ class Game {
     this.pageLayout.removeEventListener('keypress', this.start);
   }
 
-  
+  useHint() {
+    this.hintsUsed += 1;
+    console.log('hint used');
+    
+  }
+
   start() {
     this.removeStartEventListeners();
     this.input.addEventListener('keypress', this.checkInputWithHiddenWord);

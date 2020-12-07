@@ -14,10 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // create a new game
     const game = new Game(ctx, canvas, input, pageLayout);
     
-    // add a restart game button
-    let button = document.getElementById('restart-button');
-    button.addEventListener('click', game.restart);
-
+    // buttons
+    let restartButton = document.getElementById('restart-button');
+    restartButton.addEventListener('click', game.restart);
+    let hintButton = document.getElementById('hint-button');
+    hintButton.addEventListener('click', game.useHint);
+    
     // allow user to click or press any key to start game
     canvas.addEventListener('click', game.start);
     pageLayout.addEventListener('keypress', game.start);
