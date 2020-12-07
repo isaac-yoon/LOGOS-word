@@ -1,5 +1,5 @@
 # Logos
-[Link to LOGOS-word](http://http://logosword.herokuapp.com/) </br>
+[Link to LOGOS-word](http://logosword.herokuapp.com) </br>
 
 ### nounTHEOLOGY </br>
 #### the Word of God, or principle of divine reason and creative order, identified in the Gospel of John with the second person of the Trinity incarnate in Jesus Christ. </br>
