@@ -16,7 +16,7 @@
     "start": "node app.js",
     "build": "webpack --watch --mode=development",
     "server": "nodemon app.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
