@@ -213,6 +213,7 @@ class Game {
       this.levelHintsUsed += 1;
 
       this.clearInputField();
+      
       document.getElementById('word-input').value = `${this.hiddenWord.slice(0, this.levelHintsUsed)}`;
     } else {
       // notify user that there are no more hints
@@ -284,6 +285,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // buttons
     const restartButton = document.getElementById('restart-button');
     restartButton.addEventListener('click', game.restart);
+
+    const instructionsButton = document.getElementById('instructions-button');
+    const startModal = document.getElementById('start-modal')
+    instructionsButton.addEventListener('click', () => {
+        startModal.classList.remove('inactive');
+    });
 
     // allow user to click or press any key to start game
     canvas.addEventListener('click', game.start);

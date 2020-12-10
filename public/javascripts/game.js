@@ -140,6 +140,7 @@ class Game {
       this.levelHintsUsed += 1;
 
       this.clearInputField();
+      
       document.getElementById('word-input').value = `${this.hiddenWord.slice(0, this.levelHintsUsed)}`;
     } else {
       // notify user that there are no more hints

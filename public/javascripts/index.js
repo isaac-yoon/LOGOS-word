@@ -20,6 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const restartButton = document.getElementById('restart-button');
     restartButton.addEventListener('click', game.restart);
 
+    const instructionsButton = document.getElementById('instructions-button');
+    const startModal = document.getElementById('start-modal')
+    instructionsButton.addEventListener('click', () => {
+        startModal.classList.remove('inactive');
+    });
+
     // allow user to click or press any key to start game
     canvas.addEventListener('click', game.start);
     pageLayout.addEventListener('keypress', game.start);
