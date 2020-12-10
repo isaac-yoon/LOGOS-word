@@ -177,11 +177,13 @@ class Game {
     this.clearCanvas();
 
     if (this.winCheck()) {
+      // alternatively, have a end game modal show up
       this.ctx.strokeText('You won!', 125, 25);
 
       // display score
-      this.ctx.strokeText(`Incorrect: ${this.incorrectGuesses}`, 125, 50);
-      this.ctx.strokeText(`Correct: ${this.correctGuesses}`, 125, 75);
+      this.ctx.strokeText(`Incorrect Guesses: ${this.incorrectGuesses}`, 100, 50);
+      this.ctx.strokeText(`Correct Guesses: ${this.correctGuesses}`, 100, 75);
+      this.ctx.strokeText(`Hints Used: ${this.totalHintsUsed}`, 100, 100);
     } else {
       if (this.guessedCorrectly) {
       this.level += 1;
@@ -213,7 +215,7 @@ class Game {
       this.levelHintsUsed += 1;
 
       this.clearInputField();
-      
+
       document.getElementById('word-input').value = `${this.hiddenWord.slice(0, this.levelHintsUsed)}`;
     } else {
       // notify user that there are no more hints
