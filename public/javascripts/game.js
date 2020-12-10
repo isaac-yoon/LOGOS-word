@@ -14,7 +14,8 @@ class Game {
     this.hiddenWord = '';
     this.incorrectGuesses = 0;
     this.correctGuesses = 0;
-    this.hintsUsed = 0;
+    this.totalHintsUsed = 0;
+    this.levelHintsUsed = 0;
     
     // bindings
     this.wrapText = this.wrapText.bind(this);
@@ -28,6 +29,7 @@ class Game {
     this.start = this.start.bind(this);
     this.restart = this.restart.bind(this);
     this.clearInputField = this.clearInputField.bind(this);
+    this.useHint = this.useHint.bind(this);
   }
 
   wrapText(ctx, text, x, y, maxWidth, lineHeight) {
@@ -111,6 +113,7 @@ class Game {
       if (this.guessedCorrectly) {
       this.level += 1;
       this.correctGuesses += 1;
+      this.levelHintsUsed = 0;
       this.currentVerse = this.verses[this.level];
       this.guessedCorrectly = false;
       this.guessed = false;
@@ -129,17 +132,30 @@ class Game {
     this.pageLayout.removeEventListener('keypress', this.start);
   }
 
+
   useHint() {
-    // idea:
     // construct the hidden word letter by letter and display on input field
-    this.hintsUsed += 1;
-    console.log('hint used');
+    if (this.levelHintsUsed < this.hiddenWord.length) {
+      this.totalHintsUsed += 1;
+      this.levelHintsUsed += 1;
+
+      this.clearInputField();
+      document.getElementById('word-input').value = `${this.hiddenWord.slice(0, this.levelHintsUsed)}`;
+    } else {
+      // notify user that there are no more hints
+      console.log('no more hints!');
+    }
+
   }
 
   start() {
     this.removeStartEventListeners();
     this.input.addEventListener('keypress', this.checkInputWithHiddenWord);
-    
+
+    // add hint button event listener upon start of game
+    const hintButton = document.getElementById('hint-button');
+    hintButton.addEventListener('click', this.useHint);
+
     this.currentVerse = verses[this.level];
     this.hideVerse();
     this.render();
@@ -151,6 +167,8 @@ class Game {
     this.guessed = false;
     this.incorrectGuesses = 0;
     this.correctGuesses = 0;
+    this.totalHintsUsed = 0;
+    this.levelHintsUsed = 0;
     this.start();
   }
 }

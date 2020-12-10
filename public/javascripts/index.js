@@ -19,9 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // buttons
     const restartButton = document.getElementById('restart-button');
     restartButton.addEventListener('click', game.restart);
-    const hintButton = document.getElementById('hint-button');
-    hintButton.addEventListener('click', game.useHint);
-
 
     // allow user to click or press any key to start game
     canvas.addEventListener('click', game.start);
