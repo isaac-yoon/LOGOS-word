@@ -89,6 +89,8 @@ class Game {
     this.correctGuesses = 0;
     this.totalHintsUsed = 0;
     this.levelHintsUsed = 0;
+    this.canvasWidth = this.canvas.width / window.devicePixelRatio;
+    this.canvasHeight = this.canvas.height / window.devicePixelRatio;
     
     // bindings
     this.wrapText = this.wrapText.bind(this);
@@ -127,11 +129,11 @@ class Game {
   }
 
   displayVerse(verse) {
-    this.ctx.font = '12px serif';
-    let maxWidth = 250;
+    this.ctx.font = '24px serif';
+    let maxWidth = this.canvasWidth - 20;
     let lineHeight = 25;
     let x = 10;
-    let y = 25;
+    let y = this.canvasHeight / 2;
     this.wrapText(this.ctx, verse, x, y, maxWidth, lineHeight);
   }
 
