@@ -32,6 +32,7 @@ class Game {
     this.restart = this.restart.bind(this);
     this.clearInputField = this.clearInputField.bind(this);
     this.useHint = this.useHint.bind(this);
+    this.notifyUserOfIncorrectGuess = this.notifyUserOfIncorrectGuess.bind(this);
   }
 
   wrapText(ctx, text, x, y, maxWidth, lineHeight) {
@@ -125,10 +126,17 @@ class Game {
       } else if (this.guessed) {
         this.incorrectGuesses += 1;
         this.guessed = false;
+        this.notifyUserOfIncorrectGuess();
       }
       this.displayVerse(this.currentVerse);
     }
+  }
 
+  notifyUserOfIncorrectGuess() {
+    this.input.id = 'word-input-wrong-guess';
+    setTimeout(() => {
+      this.input.id = 'word-input', 1000;
+    });
   }
 
   removeStartEventListeners() {
