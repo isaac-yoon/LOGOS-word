@@ -180,12 +180,12 @@ class Game {
 
     if (this.winCheck()) {
       // alternatively, have a end game modal show up
-      this.ctx.strokeText('You won!', 125, 25);
+      this.ctx.strokeText('You won!', this.canvasWidth / 2 - 100, 75);
 
       // display score
-      this.ctx.strokeText(`Incorrect Guesses: ${this.incorrectGuesses}`, 100, 50);
-      this.ctx.strokeText(`Correct Guesses: ${this.correctGuesses}`, 100, 75);
-      this.ctx.strokeText(`Hints Used: ${this.totalHintsUsed}`, 100, 100);
+      this.ctx.strokeText(`Incorrect Guesses: ${this.incorrectGuesses}`, this.canvasWidth / 2 - 75, 100);
+      this.ctx.strokeText(`Correct Guesses: ${this.correctGuesses}`, this.canvasWidth / 2 - 75, 125);
+      this.ctx.strokeText(`Hints Used: ${this.totalHintsUsed}`, this.canvasWidth / 2 - 75, 150);
     } else {
       if (this.guessedCorrectly) {
       this.level += 1;
