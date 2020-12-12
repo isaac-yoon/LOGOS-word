@@ -108,7 +108,7 @@ class Game {
 
     if (this.winCheck()) {
       // alternatively, have a end game modal show up
-      this.ctx.strokeText('You won!', this.canvasWidth / 2 - 100, 75);
+      this.ctx.strokeText('You won!', this.canvasWidth / 2 - 100, 100);
 
       // display score
       this.ctx.strokeText(`Incorrect Guesses: ${this.incorrectGuesses}`, this.canvasWidth / 2 - 75, 100);
