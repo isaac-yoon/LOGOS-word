@@ -18,7 +18,7 @@ class Game {
     this.levelHintsUsed = 0;
     this.canvasWidth = this.canvas.width / window.devicePixelRatio;
     this.canvasHeight = this.canvas.height / window.devicePixelRatio;
-    
+
     // bindings
     this.wrapText = this.wrapText.bind(this);
     this.displayVerse = this.displayVerse.bind(this);
@@ -108,7 +108,7 @@ class Game {
 
     if (this.winCheck()) {
       // alternatively, have a end game modal show up
-      this.ctx.strokeText('You won!', this.canvasWidth / 2 - 100, 100);
+      this.ctx.strokeText('You won!', this.canvasWidth / 2 - 75, 75);
 
       // display score
       this.ctx.strokeText(`Incorrect Guesses: ${this.incorrectGuesses}`, this.canvasWidth / 2 - 75, 100);
