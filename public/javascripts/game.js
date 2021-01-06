@@ -155,8 +155,7 @@ class Game {
 
       document.getElementById('word-input').value = `${this.hiddenWord.slice(0, this.levelHintsUsed)}`;
     } else {
-      // notify user that there are no more hints
-      console.log('no more hints!');
+      document.getElementById('word-input').value = `${this.hiddenWord}`;
     }
 
   }
