@@ -91,6 +91,22 @@ class Game {
     this.levelHintsUsed = 0;
     this.canvasWidth = this.canvas.width / window.devicePixelRatio;
     this.canvasHeight = this.canvas.height / window.devicePixelRatio;
+    this.wordsToSkip = [
+      'The', 'the', 
+      'And', 'and', 
+      'At', 'at', 
+      'In', 'in', 
+      'Was', 'was', 
+      'Of', 'of', 
+      'He', 'he', 
+      'them', 
+      'Has', 'has', 
+      'To', 'to', 
+      'But', 'but',
+      'His', 'his',
+      'Is', 'is',
+      'We', 'we',
+    ];
 
     // bindings
     this.wrapText = this.wrapText.bind(this);
@@ -147,10 +163,14 @@ class Game {
     let i = Math.floor(Math.random() * splitVerse.length);
     let wordToHide = splitVerse[i];
 
-    splitVerse[i] = new Array(wordToHide.length + 1).join('_ ');
-    this.currentVerse = splitVerse.join(' ');
-
-    this.hiddenWord = wordToHide;
+    if (this.wordsToSkip.includes(wordToHide)) {
+      this.hideVerse()
+    } else {
+      splitVerse[i] = new Array(wordToHide.length + 1).join('_ ');
+      this.currentVerse = splitVerse.join(' ');
+  
+      this.hiddenWord = wordToHide;
+    }
   }
 
   checkInputWithHiddenWord(e) {
@@ -228,8 +248,7 @@ class Game {
 
       document.getElementById('word-input').value = `${this.hiddenWord.slice(0, this.levelHintsUsed)}`;
     } else {
-      // notify user that there are no more hints
-      console.log('no more hints!');
+      document.getElementById('word-input').value = `${this.hiddenWord}`;
     }
 
   }

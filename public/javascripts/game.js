@@ -18,7 +18,22 @@ class Game {
     this.levelHintsUsed = 0;
     this.canvasWidth = this.canvas.width / window.devicePixelRatio;
     this.canvasHeight = this.canvas.height / window.devicePixelRatio;
-    this.wordsToSkip = ['the', 'The', 'and', 'And', 'at', 'At'];
+    this.wordsToSkip = [
+      'The', 'the', 
+      'And', 'and', 
+      'At', 'at', 
+      'In', 'in', 
+      'Was', 'was', 
+      'Of', 'of', 
+      'He', 'he', 
+      'them', 
+      'Has', 'has', 
+      'To', 'to', 
+      'But', 'but',
+      'His', 'his',
+      'Is', 'is',
+      'We', 'we',
+    ];
 
     // bindings
     this.wrapText = this.wrapText.bind(this);
