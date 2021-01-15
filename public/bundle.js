@@ -91,22 +91,35 @@ class Game {
     this.levelHintsUsed = 0;
     this.canvasWidth = this.canvas.width / window.devicePixelRatio;
     this.canvasHeight = this.canvas.height / window.devicePixelRatio;
-    this.wordsToSkip = [
-      'The', 'the', 
-      'And', 'and', 
-      'At', 'at', 
-      'In', 'in', 
-      'Was', 'was', 
-      'Of', 'of', 
-      'He', 'he', 
-      'them', 
-      'Has', 'has', 
-      'To', 'to', 
-      'But', 'but',
-      'His', 'his',
-      'Is', 'is',
-      'We', 'we',
-    ];
+    this.wordsToSkip = {
+      'The': true,
+      'the': true,
+      'And': true,
+      'and': true,
+      'At': true,
+      'at': true,
+      'Was': true,
+      'was': true,
+      'In': true,
+      'in': true,
+      'Of': true,
+      'of': true,
+      'He': true,
+      'he': true,
+      'them': true,
+      'Has': true,
+      'has': true,
+      'To': true,
+      'to': true,
+      'But': true,
+      'but': true,
+      'His': true,
+      'his': true,
+      'Is': true,
+      'is': true,
+      'We': true,
+      'we': true
+    };
 
     // bindings
     this.wrapText = this.wrapText.bind(this);
@@ -163,7 +176,7 @@ class Game {
     let i = Math.floor(Math.random() * splitVerse.length);
     let wordToHide = splitVerse[i];
 
-    if (this.wordsToSkip.includes(wordToHide)) {
+    if (this.wordsToSkip[wordToHide]) {
       this.hideVerse()
     } else {
       splitVerse[i] = new Array(wordToHide.length + 1).join('_ ');
