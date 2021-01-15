@@ -18,6 +18,7 @@ class Game {
     this.levelHintsUsed = 0;
     this.canvasWidth = this.canvas.width / window.devicePixelRatio;
     this.canvasHeight = this.canvas.height / window.devicePixelRatio;
+    this.wordsToSkip = ['the', 'The', 'and', 'And', 'at', 'At'];
 
     // bindings
     this.wrapText = this.wrapText.bind(this);
@@ -74,10 +75,14 @@ class Game {
     let i = Math.floor(Math.random() * splitVerse.length);
     let wordToHide = splitVerse[i];
 
-    splitVerse[i] = new Array(wordToHide.length + 1).join('_ ');
-    this.currentVerse = splitVerse.join(' ');
-
-    this.hiddenWord = wordToHide;
+    if (this.wordsToSkip.includes(wordToHide)) {
+      this.hideVerse()
+    } else {
+      splitVerse[i] = new Array(wordToHide.length + 1).join('_ ');
+      this.currentVerse = splitVerse.join(' ');
+  
+      this.hiddenWord = wordToHide;
+    }
   }
 
   checkInputWithHiddenWord(e) {
