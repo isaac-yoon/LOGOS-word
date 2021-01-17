@@ -45,7 +45,11 @@ class Game {
       'Is': true,
       'is': true,
       'We': true,
-      'we': true
+      'we': true,
+      'Be': true,
+      'be': true,
+      'you': true,
+      'You': true,
     };
 
     // bindings
