@@ -1,4 +1,4 @@
-# Logos
+# LOGOS
 [Link to Live Site](http://logosword.herokuapp.com) </br>
 
 ### nounTHEOLOGY </br>
