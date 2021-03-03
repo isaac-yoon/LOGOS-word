@@ -6,4 +6,4 @@
 #### &nbsp; (in Jungian psychology) the principle of reason and judgment, associated with the animus. </br>
 Defintions from Oxford Languages
 
-### <span style="color:blue">Coded in pure JavaScript, implemented with Object-Oriented Programming in mind, with some help from Isaiah Yoon.</span>
+## <span style="color:blue">Coded in pure JavaScript, implemented with Object-Oriented Programming in mind, with some help from Isaiah Yoon.</span>
