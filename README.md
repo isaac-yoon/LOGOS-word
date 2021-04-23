@@ -1,5 +1,5 @@
 # LOGOS - [Live Site](https://logosword.herokuapp.com) </br>
-<span>Coded in pure JavaScript, implemented with Object-Oriented Programming</span>
+<span>Coded in pure JavaScript, implemented with Object-Oriented Programming</span></br>
 <span>Guess the missing word from selected verses from the Holy Bible (NIV) </span>
 <h1>Definition from Oxford Languages </h1>
 <h3>noun-THEOLOGY</h3>
