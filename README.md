@@ -9,4 +9,4 @@
 ## Acknowledgements </br>
 coach Sammi & Anne-Marie for giving me encouragement</br>
 ## Credits </br>
-[Isaiah Yoon](https://github.com/isaiahyoon) </br>
+[Isaiah Yoon](https://github.com/isaiahyoon) for productive pair-boarding sessions and tips</br>
