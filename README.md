@@ -7,6 +7,7 @@
 #### &nbsp; (in Jungian psychology) the principle of reason and judgment, associated with the animus. </br>
 Defintions from Oxford Languages
 
-# Acknowledgements </br>
+## Acknowledgements </br>
+coach Sammi & Anne-Marie for giving me encouragement</br>
 ## Credits </br>
 [Isaiah Yoon](https://github.com/isaiahyoon) </br>
