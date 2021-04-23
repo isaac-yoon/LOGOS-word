@@ -1,4 +1,4 @@
-# LOGOS - [Live Site](http://logosword.herokuapp.com) </br>
+# LOGOS - [Live Site](https://logosword.herokuapp.com) </br>
 <span>Coded in pure JavaScript, implemented with Object-Oriented Programming in mind.</span>
 <h1>Definition from Oxford Languages </h1>
 <h3>noun-THEOLOGY</h3>
