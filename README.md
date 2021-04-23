@@ -9,4 +9,4 @@ Defintions from Oxford Languages
 # <span style="color:blue">Coded in pure JavaScript, implemented with Object-Oriented Programming in mind.</span> </br>
 ### Acknowledgements </br>
 ## Credits </br>
-Isaiah Yoon [Isaiah Yoon's GitHub](https://github.com/isaiahyoon) </br>
+[Isaiah Yoon](https://github.com/isaiahyoon) </br>
