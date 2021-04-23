@@ -1,6 +1,7 @@
 # LOGOS
 [Link to Live Site](http://logosword.herokuapp.com) </br>
-### <span style="color:blue">Coded in pure JavaScript, implemented with Object-Oriented Programming in mind.</span> </br>
+### <span style="color:blue">Coded in pure JavaScript, implemented with Object-Oriented Programming in mind.</span> 
+</br>
 </br>
 </br>
 ### noun-THEOLOGY </br>
