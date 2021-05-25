@@ -2,7 +2,7 @@
 <span>Coded in pure JavaScript, implemented with Object-Oriented Programming</span></br>
 The four pillars of Object-Oriented Programming are: </br>
 (1) Encapsulation: </br>
-In the code, there is a Game class that maintains it's own private state. It has functions that would not be accessible by other classes, although this app is simple and has only one class. In fact, the other parts of the application such as canvas and ctx are inputs for the Game constructor function.
+In the code, there is a Game class that maintains it's own private state. It has functions that would not be accessible by other classes, although this app is simple and has only one class. In fact, the other parts of the application such as canvas and ctx are inputs for the Game constructor function. </br>
 (2) Abstraction: </br>
 (3) Inheritance: </br>
 (4) Polymorphism: </br>
