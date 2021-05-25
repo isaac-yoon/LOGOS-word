@@ -6,6 +6,7 @@ In the code, there is a Game class that maintains it's own private state. It has
 (2) Abstraction: </br>
 (3) Inheritance: </br>
 (4) Polymorphism: </br>
+</br>
 <span>Guess the missing word from selected verses from the Holy Bible (NIV) </span>
 <h1>Definition from Oxford Languages </h1>
 <h3>noun-THEOLOGY</h3>
@@ -13,6 +14,6 @@ In the code, there is a Game class that maintains it's own private state. It has
 <h4>(in Jungian psychology) the principle of reason and judgment, associated with the animus.
 
 ## Acknowledgements </br>
-coach Sammi & Anne-Marie for giving me encouragement</br>
+Sammi & Anne-Marie for giving me encouragement</br>
 ## Credits </br>
 [Isaiah Yoon](https://github.com/isaiahyoon) for productive pair-boarding sessions and tips</br>
