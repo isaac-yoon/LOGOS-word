@@ -111,9 +111,19 @@ class Game {
       this.hideVerse()
     } else {
       splitVerse[i] = new Array(wordToHide.length + 1).join('_ ');
+
+      // replace blank spaces with punctuation from actual word
+      for (i = 0; i < length(wordToHide); i++) {
+        let punctuation = '.?,;'
+        if (punctutation.include(wordToHide[i])) {
+          splitVerse[i] = wordToHide[i];
+        }
+      }
+      
       this.currentVerse = splitVerse.join(' ');
-  
-      this.hiddenWord = wordToHide;
+      
+      // remove all punctuation so user doesn't need to guess punctuation
+      this.hiddenWord = wordToHide.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").replace(/\s{2,}/g, " ");
     }
   }
 
