@@ -114,7 +114,6 @@ class Game {
       
       this.currentVerse = splitVerse.join(' ');
       
-      // remove all punctuation so user doesn't need to guess punctuation
       this.hiddenWord = wordToHide;
     }
   }
