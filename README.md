@@ -7,7 +7,11 @@ In the code, there is a Game class that maintains it's own private state. It has
 (3) Inheritance: </br>
 (4) Polymorphism: </br>
 </br>
+<<<<<<< HEAD
 <span>Choose the missing word from selected verses from the Holy Bible (NIV) </span>
+=======
+<span>Guess the missing word from selected verses from the Bible (NIV) </span>
+>>>>>>> 31fd720db2e27c387ff158ec02b5f112c0a734e1
 <h1>Definition from Oxford Languages </h1>
 <h3>noun-THEOLOGY</h3>
 <h4>the Word of God, or principle of divine reason and creative order, identified in the Gospel of John with the second person of the Trinity incarnate in Jesus Christ.
