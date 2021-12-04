@@ -15,5 +15,6 @@ In the code, there is a Game class that maintains it's own private state. It has
 
 ## Acknowledgements </br>
 Sammi & Anne-Marie</br>
+Wayne Su</br>
 ## Credits </br>
 [Isaiah Yoon](https://github.com/isaiahyoon)</br>
