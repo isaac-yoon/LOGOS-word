@@ -1,13 +1,13 @@
 # LOGOS - [Live Site](https://logosword.herokuapp.com) </br>
 <span>Coded in pure JavaScript, implemented with Object-Oriented Programming</span></br>
 The four pillars of Object-Oriented Programming are: </br>
-(1) Encapsulation:
+(1) Encapsulation
 </br>
-(2) Abstraction:
+(2) Abstraction
 </br>
-(3) Inheritance:
+(3) Inheritance
 </br>
-(4) Polymorphism:
+(4) Polymorphism
 </br>
 </br>
 <span>Choose the missing word from selected verses from the Bible (NIV) </span>
