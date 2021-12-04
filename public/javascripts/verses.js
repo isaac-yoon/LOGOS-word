@@ -10,7 +10,8 @@ const verses = {
   9 : "For now we see only a reflection as in a mirror; then we shall see face to face. Now I know in part; then I shall know fully, even as I am fully known.",
   10 : 'Then you will know the truth, and the truth will set you free.',
   11 : 'these are the things God has revealed to us by his Spirit. The Spirit searches all things, even the deep things of God.',
-  12 : 'Trust in the LORD with all thine heart; and lean not unto thine own understanding.'
+  12 : 'Trust in the LORD with all thine heart; and lean not unto thine own understanding.',
+  13 : 'Amen'
 }
 
 export default verses;
