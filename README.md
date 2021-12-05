@@ -11,7 +11,7 @@ The four pillars of Object-Oriented Programming are: </br>
 (4) Polymorphism
 </br>
 </br>
-<span>Choose the missing word from selected verses from the Bible (NIV) </span>
+<span>Choose the missing word from selected verses from the Bible</span>
 <h1>Definition from Oxford Languages </h1>
 <h3>noun-THEOLOGY</h3>
 <h4>the Word of God, or principle of divine reason and creative order, identified in the Gospel of John with the second person of the Trinity incarnate in Jesus Christ.
