@@ -1,5 +1,6 @@
 # LOGOS - [Live Site](https://logosword.herokuapp.com) </br>
 <span>Coded in pure JavaScript, implemented with Object-Oriented Programming</span></br>
+</br>
 The four pillars of Object-Oriented Programming are: </br>
 </br>
 (1) Encapsulation
