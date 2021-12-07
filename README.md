@@ -19,7 +19,5 @@ The four pillars of Object-Oriented Programming are: </br>
 
 ## Acknowledgements </br>
 Sammi & Anne-Marie</br>
-Wayne Su</br>
-TJ</br>
 ## Credits </br>
 [Isaiah Yoon](https://github.com/isaiahyoon)</br>
