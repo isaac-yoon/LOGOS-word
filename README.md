@@ -18,6 +18,6 @@ The four pillars of Object-Oriented Programming are: </br>
 <h4>(in Jungian psychology) the principle of reason and judgment, associated with the animus.
 
 ## Acknowledgements </br>
-Sammi & Anne-Marie</br>
+Anne-Marie</br>
 ## Credits </br>
 [Isaiah Yoon](https://github.com/isaiahyoon)</br>
