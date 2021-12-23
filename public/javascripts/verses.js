@@ -11,7 +11,7 @@ const verses = {
   10 : 'Then you will know the truth, and the truth will set you free.',
   11 : 'these are the things God has revealed to us by his Spirit. The Spirit searches all things, even the deep things of God.',
   12 : 'Trust in the LORD with all thine heart; and lean not unto thine own understanding.',
-  13 : 'Amen'
+  13 : 'Amen.'
 }
 
 export default verses;
