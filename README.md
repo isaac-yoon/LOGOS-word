@@ -1,5 +1,6 @@
 # LOGOS - [Live Site](https://logosword.herokuapp.com) </br>
 <span>Coded in pure JavaScript, implemented with Object-Oriented Programming</span></br>
+</br>
 The four pillars of Object-Oriented Programming are: </br>
 </br>
 (1) Encapsulation
@@ -18,6 +19,6 @@ The four pillars of Object-Oriented Programming are: </br>
 <h4>(in Jungian psychology) the principle of reason and judgment, associated with the animus.
 
 ## Acknowledgements </br>
-Sammi & Anne-Marie</br>
+Anne-Marie</br>
 ## Credits </br>
 [Isaiah Yoon](https://github.com/isaiahyoon)</br>
