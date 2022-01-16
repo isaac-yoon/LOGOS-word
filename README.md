@@ -16,7 +16,7 @@ The four pillars of Object-Oriented Programming are: </br>
 <h1>Definition from Oxford Languages </h1>
 <h3>noun-THEOLOGY</h3>
 <h4>the Word of God, or principle of divine reason and creative order, identified in the Gospel of John with the second person of the Trinity incarnate in Jesus Christ.
-<h4>(in Jungian psychology) the principle of reason and judgment, associated with the animus.
+<h4> - (in Jungian psychology) the principle of reason and judgment, associated with the animus.
 
 ## Credits </br>
 [Isaiah Yoon](https://github.com/isaiahyoon)</br>
