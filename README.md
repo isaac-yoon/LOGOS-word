@@ -1,4 +1,6 @@
 # LOGOS - [Live Site](https://logosword.herokuapp.com) </br>
+* Heroku no longer offers support for hobby websites. So the site will be down for the indefinite future.
+
 <span>Coded in pure JavaScript, implemented with Object-Oriented Programming</span></br>
 </br>
 The four pillars of Object-Oriented Programming are: </br>
