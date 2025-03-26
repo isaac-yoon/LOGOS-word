@@ -8,8 +8,8 @@ const verses = {
   7 : 'For God will deliver Zion and rebuild the cities of Judah; they shall live there and inherit it; the offspring of His servants shall possess it; those who cherish His name shall dwell there.',
   8 : 'extending kindness to the thousandth generation, forgiving iniquity, trasngression, and sin; yet He does not remit all punishment, yet He does not clear the guilty but visits the iniquity of parents upon children and children's children, upon the third and fourth generations.',
   9 : 'The Lord doth build up Jerusalem: he gathereth together the outcasts of Israel. He healeth the broken in heart, and bindeth up their wounds. He telleth the number of the stars; he calleth them all by their names. Great is our Lord, and of great power: his understanding is infinite. The Lord lifteth up the meek: he casteth the wicked down to the ground. He giveth to the beast his food, and to the young ravens which cry. He delighteth not in the strength of the horse: he taketh not pleasure in the legs of a man. For he hath strengthened the bars of thy gates; he hath blessed thy children within thee. He maketh peace in thy borders, and filleth thee with the finest of the wheat. He sendeth forth his commandment upon earth: his word runneth very swiftly. He sendeth out his word, and melteth them: he causeth his wind to blow, and the waters flow. He sheweth his word unto Jacob, his statutes and his judgments unto Israel.'
-  10 : 'Brethren, the grace of our Lord Jesus Christ be with your spirit. Amen.',
-  11 : '',
+  10 : 'I have observed the task which God has given the sons of man to be concerned with: He made everything beautiful in its time; He has also put an enigma into their minds so that man cannot comprehend what God has done from beginning to end. Thus I perceived that there is nothing better for them than to rejoice and do good in his life.',
+  11 : 'Brethren, the grace of our Lord Jesus Christ be with your spirit. Amen.',
   12 : '',
 }
 
