@@ -1,7 +1,6 @@
 const verses = {
   1 : 'In the beginning God created the heavens and the earth.',
   2 : 'Thus saith the LORD; Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departed from the LORD.',
-  3 : 'For without are ... whosoever loveth and maketh a lie.',    
   4 : 'I am about to pour out my wrath on you and spend my anger against you. I will judge you according to your conduct and repay you for all your detestable practices.',
   5 : 'Because with lies ye have grieved the heart of the righteous, whom I have not made sad, and strengthened the hands of the wicked, that he should not return from his wicked way, and be saved alive; therefore ye shall no more see false visions nor divine divinations: and I will deliver my people out of your hand; and ye shall know that I am Jehovah.',
   6 : 'Add that to their guilt; let them have no share of Your beneficience; may they be erased from the book of life, and not be inscribed with the righteous.',
