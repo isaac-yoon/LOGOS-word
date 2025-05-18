@@ -8,7 +8,7 @@ const verses = {
   3 : 'Backbiters, haters of God, despiteful, proud, boasters, inventors of evil things, disobedient to parents,',
   4 : 'Without understanding, covenantbreakers, [11] without natural affection, implacable, unmerciful:',
   9 : 'Who knowing the judgment of God, that they which commit such things are worthy of death, not only do the same, but have [12] pleasure in them that do them.',
-  11 : '',
+  11 : 'Brethren, the grace of our Lord Jesus Christ be with your spirit. Amen.',
   12 : '',
 }
 
